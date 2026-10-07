@@ -1,5 +1,5 @@
 /**
- * 生成网站截图URL (使用 WordPress mshots API)
+ * 生成网站截图URL (使用 WordPress mshots API，客户端直接加载)
  * @param url 目标网站URL
  * @param width 截图宽度，默认640
  * @param height 截图高度，默认400
@@ -7,8 +7,8 @@
  */
 export function generateScreenshotUrl(
 	url: string,
-	width: number = 640,
-	height: number = 400,
+	width = 640,
+	height = 400,
 ): string {
 	if (!url) return "";
 

@@ -9,10 +9,10 @@ import {
 	getEnabledFriends,
 	siteConfig,
 } from "@/config";
-import { generateScreenshotUrl } from "@/utils/screenshot-utils";
 import I18nKey from "@/i18n/i18nKey";
 import { i18n } from "@/i18n/translation";
 import MainGridLayout from "@/layouts/MainGridLayout.astro";
+import { generateScreenshotUrl } from "@/utils/screenshot-utils";
 import "@/styles/pages/common.css";
 import "@/styles/pages/friends.css";
 
@@ -174,12 +174,13 @@ const description =
 
               {/* 截图预览 - 悬停显示在下方 */}
               {item.screenshotUrl && (
-                <div class="friend-screenshot-preview w-full opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 pointer-events-none max-h-0 group-hover:max-h-48 overflow-hidden">
+                <div class="friend-screenshot-preview w-full opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 pointer-events-none max-h-0 group-hover:max-h-64 overflow-hidden">
                   <img
                     src={item.screenshotUrl}
                     alt={`${item.title} 首页截图`}
                     class="w-full h-auto object-cover rounded-lg shadow-lg border border-(--line-divider) bg-(--card-bg)"
                     loading="lazy"
+                    referrerpolicy="no-referrer"
                   />
                 </div>
               )}
